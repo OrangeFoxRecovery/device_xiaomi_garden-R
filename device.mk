@@ -16,6 +16,9 @@
 
 LOCAL_PATH := device/xiaomi/garden
 
+# API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 

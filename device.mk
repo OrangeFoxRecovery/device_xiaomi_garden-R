@@ -33,15 +33,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/root/init.recovery.mt6765.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6762.rc
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-	android.hardware.gatekeeper@1.0-service \
-	android.hardware.gatekeeper@1.0-impl
-
-PRODUCT_COPY_FILES += \
-	$(OUT_DIR)/target/product/garden/vendor/bin/hw/android.hardware.gatekeeper@1.0-service:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/android.hardware.gatekeeper@1.0-service \
-	$(OUT_DIR)/target/product/garden/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
-
 # Keymaster
 TARGET_RECOVERY_DEVICE_MODULES += \
 	libkeymaster4 \

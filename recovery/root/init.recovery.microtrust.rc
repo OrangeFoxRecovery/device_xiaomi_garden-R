@@ -205,7 +205,7 @@ on post-fs
     restorecon_recursive /persist
     restorecon_recursive /vendor/persist
 
-on post-fs
+on fs
     chmod 0660 /dev/teei_client
     chown system system /dev/teei_client
     chmod 0660 /dev/teei_config
@@ -227,9 +227,11 @@ on post-fs
     chown system system /dev/emmcrpmb0
     chown system system /dev/utr_tui
     chmod 0660 /dev/utr_tui
-    write /proc/bootprof "start teei_daemon (on post-fs)"
+    write /proc/bootprof "start teei_daemon (on fs)"
     start teei_daemon
-    write /proc/bootprof "start teei_daemon end (on post-fs)"
+    write /proc/bootprof "start teei_daemon end (on fs)"
 
 on property:vendor.crypto.fake_encrypt=1 && property:vold.post_fs_data_done=1
     setprop vendor.soter.teei.crypto.state unencrypted
+on post-fs-data
+	setprop vendor.soter.teei.logini "start"
